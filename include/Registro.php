@@ -16,11 +16,13 @@ class Registro {
     private $id_registro;
     private $nombre;
     private $apellidos;
+    private $numero= array();
     
-    function __construct($id_registro, $nombre, $apellidos) {
+    function __construct($id_registro, $nombre, $apellidos, $numero) {
         $this->id_registro = $id_registro;
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
+        $this->numero = $numero;
     }
     
     function getId_registro() {
@@ -35,6 +37,10 @@ class Registro {
         return $this->apellidos;
     }
 
+    function getNumero() {
+        return $this->numero;
+    }
+
     function setId_registro($id_registro) {
         $this->id_registro = $id_registro;
     }
@@ -46,6 +52,15 @@ class Registro {
     function setApellidos($apellidos) {
         $this->apellidos = $apellidos;
     }
+
+    function setNumero($numero) {
+        $this->numero = $numero;
+    }
+
+
+
+
+
 
 
 

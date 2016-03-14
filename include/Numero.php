@@ -13,7 +13,7 @@
  */
 class Numero {
     private $id_numero;
-    private $numero = array();
+    private $numero;
     
     function __construct($id_numero, $numero) {
         $this->id_numero = $id_numero;

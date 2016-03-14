@@ -45,6 +45,7 @@ class DB {
             // Comprobamos si el objeto se ha creado correctamente
             if (isset($this->dwes)) {
                 // De ser así, realizamos la consulta
+                // De ser así, realizamos 
                 $resultado = $this->dwes->query($sql);
                 // Devolvemos el resultado
                 return $resultado;
@@ -71,9 +72,9 @@ class DB {
     }
 
     
-    public function altaNumero($numero) {
+    public function altaNumero($numero, $id_registro) {
         $sql = "INSERT INTO numero";
-        $sql .= " VALUES (0, '$numero')";
+        $sql .= " VALUES (0, '$numero', '$id_registro')";
         $resultado = self::ejecutaConsulta($sql);
         // Comprobamos el resultado
         if ($resultado) {
@@ -83,20 +84,7 @@ class DB {
             return $this->dwes->errorInfo()[2];
         }
     }
-
-    
-    public function altaNumeroRegistro($id_numero, $id_registro) {
-        $sql = "INSERT INTO pelicula";
-        $sql .= " VALUES (0, '$id_numero', '$id_registro')";
-        $resultado = self::ejecutaConsulta($sql);
-        // Comprobamos el resultado
-        if ($resultado) {
-            // Si es correcto, devolvemos 0
-            return 0;
-        } else {
-            return $this->dwes->errorInfo()[2];
-        }
-    }               
+                     
 
     
     public function listaRegistros() {
@@ -118,7 +106,7 @@ class DB {
 
     
     public function listaRegistro($id_registro) {
-        $sql = "SELECT * FROM genero WHERE id_registro =" . $id_registro . ";";
+        $sql = "SELECT * FROM registro WHERE id_registro =" . $id_registro . ";";
         $resultado = self::ejecutaConsulta($sql);
 
         if ($resultado) {
