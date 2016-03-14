@@ -259,13 +259,13 @@ class DB {
 
                 $sql2 = "SELECT * FROM numero WHERE id_registro =" . $id_registro . ";";
 
-                $resultado2 = self::ejecutaConsulta($sql);
+                $resultado2 = self::ejecutaConsulta($sql2);
 
                 if ($resultado2) {
                     $row2 = $resultado2->fetch();
 
                     while ($row2 != null) {
-                        $numeros[] = new Numero($row2);
+                        $numeros[] = new Numero($row2['id_numero'], $row2['numero']);
                         $row2 = $resultado2->fetch();
                     }
 

@@ -20,6 +20,16 @@ $registro = new Registro(0, "Luis", "Cabrerizo", $listaNumeros);
 
 $array = $cliente->altaRegistro($registro);
 
+$registros = array();
+
+$registros = $cliente->listaRegistros();
+
+for ($index = 0; $index < count($registros); $index++) {
+    echo $registros[$index]->mostrarRegistro();
+    echo "<br/>";
+}
+
+
 
 
 ?>

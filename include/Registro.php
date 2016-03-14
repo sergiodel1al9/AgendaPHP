@@ -57,6 +57,19 @@ class Registro {
         $this->numero = $numero;
     }
 
+    
+    public function mostrarRegistro() {
+        $salida = "";
+        $salida += $this->nombre;
+        $salida += " ";
+        $salida += $this->apellidos;
+        
+        for ($index = 0; $index < count($this->numeros); $index++) {
+            $salida .= " ";
+            $salida .= $this->numeros[$index]->getNumero;
+        }
+        return $salida;
+    }
 
 
 
