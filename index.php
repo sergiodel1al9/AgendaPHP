@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 
 <?php
+
 require_once './include/DB.php';
-require_once './include/Numero.php';
 require_once './include/Registro.php';
+require_once './include/Numero.php';
 
 $cliente = new DB();
 
-$cliente->altaRegistro('Sergio', 'Jimenez');
-$cliente->altaNumero('680342538', 1);
+
+$listaNumeros = array();
+
+$listaNumeros[] = new Numero('0','950555339');
+$listaNumeros[] = new Numero('0','617699191');
 
 
+$registro = new Registro(0, "Luis", "Cabrerizo", $listaNumeros);
 
 
+$array = $cliente->altaRegistro($registro);
 
 
 
